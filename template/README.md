@@ -1,6 +1,6 @@
 # preact material app
 
-> Super performant `Material` app for preact world
+Super performant `Material` app for preact world
 
 ## CLI Commands
 
