@@ -1,6 +1,6 @@
-# {{ name }}
+# preact material app
 
-> {{ description }}
+> Super performant `Material` app for preact world
 
 ## CLI Commands
 
