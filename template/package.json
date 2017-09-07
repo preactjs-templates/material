@@ -18,7 +18,7 @@
     "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
     "preact-cli": "^1.4.1",
-    "preact-material-components": "^1.1.5"
+    "preact-material-components": "^1.1.6"
   },
   "dependencies": {
     "preact": "^8.2.1",
