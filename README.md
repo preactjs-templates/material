@@ -9,7 +9,7 @@
 
 ``` bash
 $ npm install -g preact-cli
-$ preact create default my-project
+$ preact create material my-project
 $ cd my-project
 $ npm install
 $ npm run dev
