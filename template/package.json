@@ -24,6 +24,6 @@
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.5.5",
-    "preact-material-components": "^1.2.3"
+    "preact-material-components": "^1.2.4"
   }
 }
