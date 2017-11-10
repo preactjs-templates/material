@@ -11,7 +11,11 @@
     "test": "eslint src && preact test"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor"
+    "extends": "eslint-config-synacor",
+    "rules": {
+      "react/sort-comp": "off",
+      "react/prefer-stateless-function": "off"
+    }
   },
   "eslintIgnore": ["build/*"],
   "devDependencies": {
