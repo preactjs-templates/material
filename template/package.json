@@ -8,10 +8,16 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "eslint src && preact test"
+    "lint": "eslint src"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor"
+    "extends": "eslint-config-synacor",
+    "rules": {
+      "no-unused-vars": "off",
+      "react/sort-comp": "off",
+      "react/jsx-no-bind": "off",
+      "react/prefer-stateless-function": "off"
+    }
   },
   "eslintIgnore": ["build/*"],
   "devDependencies": {
