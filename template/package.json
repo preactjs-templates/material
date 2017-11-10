@@ -13,6 +13,7 @@
   "eslintConfig": {
     "extends": "eslint-config-synacor",
     "rules": {
+      "no-unused-vars": "warn",
       "react/sort-comp": "off",
       "react/prefer-stateless-function": "off"
     }
