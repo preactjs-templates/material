@@ -11,7 +11,7 @@
     "lint": "eslint src"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor",
+    "extends": ["eslint-config-synacor", "prettier"],
     "rules": {
       "react/sort-comp": "off",
       "react/prefer-stateless-function": "off"
@@ -21,8 +21,11 @@
   "devDependencies": {
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-prettier": "^2.3.0",
     "if-env": "^1.0.0",
-    "preact-cli": "^2.0.0"
+    "preact-cli": "^2.0.0",
+    "prettier": "^1.8.0"
   },
   "dependencies": {
     "preact": "^8.2.1",
