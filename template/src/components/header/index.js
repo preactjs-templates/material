@@ -13,67 +13,85 @@ import 'preact-material-components/Toolbar/style.css';
 import style from './style';
 
 export default class Header extends Component {
-	closeDrawer(){
+	closeDrawer() {
 		this.drawer.MDComponent.open = false;
 		this.state = {
 			darkThemeEnabled: false
 		};
 	}
+
+	openDrawer = () => (this.drawer.MDComponent.open = true);
+
+	openSettings = () => this.dialog.MDComponent.show();
+
+	drawerRef = drawer => (this.drawer = drawer);
+	dialogRef = dialog => (this.dialog = dialog);
+
+	linkTo = path => () => {
+		route(path);
+		this.closeDrawer();
+	};
+
+	goHome = this.linkTo('/');
+	goToMyProfile = this.linkTo('/profile');
+
+	toggleDarkTheme() {
+		this.setState(
+			{
+				darkThemeEnabled: !this.state.darkThemeEnabled
+			},
+			() => {
+				if (this.state.darkThemeEnabled) {
+					document.body.classList.add('mdc-theme--dark');
+				}
+				else {
+					document.body.classList.remove('mdc-theme--dark');
+				}
+			}
+		);
+	}
+
 	render() {
 		return (
 			<div>
 				<Toolbar className="toolbar">
 					<Toolbar.Row>
-						<Toolbar.Section align-start={true}>
-							<Toolbar.Icon menu={true} onClick={() => {
-								this.drawer.MDComponent.open = true;
-							}}>menu</Toolbar.Icon>
-							<Toolbar.Title>
-								Preact app
-							</Toolbar.Title>
+						<Toolbar.Section align-start>
+							<Toolbar.Icon menu onClick={this.openDrawer}>
+								menu
+							</Toolbar.Icon>
+							<Toolbar.Title>Preact app</Toolbar.Title>
 						</Toolbar.Section>
-						<Toolbar.Section align-end={true} onClick={()=>{
-							this.dialog.MDComponent.show();
-						}}>
+						<Toolbar.Section align-end onClick={this.openSettings}>
 							<Toolbar.Icon>settings</Toolbar.Icon>
 						</Toolbar.Section>
 					</Toolbar.Row>
 				</Toolbar>
-				<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
+				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.TemporaryDrawerContent>
 						<List>
-							<List.LinkItem onClick={()=>{route('/'); this.closeDrawer();}}>
+							<List.LinkItem onClick={this.goHome}>
 								<List.ItemIcon>home</List.ItemIcon>
-									Home
+								Home
 							</List.LinkItem>
-							<List.LinkItem onClick={()=>{route('/profile'); this.closeDrawer();}}>
+							<List.LinkItem onClick={this.goToMyProfile}>
 								<List.ItemIcon>account_circle</List.ItemIcon>
-									Profile
+								Profile
 							</List.LinkItem>
 						</List>
 					</Drawer.TemporaryDrawerContent>
 				</Drawer.TemporaryDrawer>
-				<Dialog ref={dialog=>{this.dialog=dialog;}}>
-          <Dialog.Header>Settings</Dialog.Header>
-          <Dialog.Body>
+				<Dialog ref={this.dialogRef}>
+					<Dialog.Header>Settings</Dialog.Header>
+					<Dialog.Body>
 						<div>
-							Enable dark theme <Switch onClick={()=>{
-								this.setState({
-									darkThemeEnabled: !this.state.darkThemeEnabled
-								},() => {
-									if(this.state.darkThemeEnabled) {
-										document.body.classList.add('mdc-theme--dark');
-									} else {
-										document.body.classList.remove('mdc-theme--dark');
-									}
-								});
-							}}/>
+							Enable dark theme <Switch onClick={this.toggleDarkTheme} />
 						</div>
-          </Dialog.Body>
-          <Dialog.Footer>
-            <Dialog.FooterButton accept={true}>okay</Dialog.FooterButton>
-          </Dialog.Footer>
-        </Dialog>
+					</Dialog.Body>
+					<Dialog.Footer>
+						<Dialog.FooterButton accept>okay</Dialog.FooterButton>
+					</Dialog.Footer>
+				</Dialog>
 			</div>
 		);
 	}
