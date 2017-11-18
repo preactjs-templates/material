@@ -35,7 +35,7 @@ export default class Header extends Component {
 	goHome = this.linkTo('/');
 	goToMyProfile = this.linkTo('/profile');
 
-	toggleDarkTheme() {
+	toggleDarkTheme = () => {
 		this.setState(
 			{
 				darkThemeEnabled: !this.state.darkThemeEnabled
