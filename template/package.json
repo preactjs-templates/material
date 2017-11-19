@@ -15,6 +15,7 @@
     "rules": {
       "no-unused-vars": "warn",
       "react/sort-comp": "off",
+      "lines-around-comment": "off",
       "react/prefer-stateless-function": "off"
     }
   },
