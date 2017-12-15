@@ -39,7 +39,7 @@ export default class Profile extends Component {
 				<div>Current time: {new Date(time).toLocaleString()}</div>
 
 				<p>
-					<Button raised primary ripple onClick={this.increment}>Click Me</Button>
+					<Button raised ripple onClick={this.increment}>Click Me</Button>
 					{' '}
 					Clicked {count} times.
 				</p>
