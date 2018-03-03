@@ -10,15 +10,15 @@ export default class Home extends Component {
 			<div class={style.home}>
 				<h1>Home route</h1>
 				<Card>
-					<Card.Primary>
-						<Card.Title>Home card</Card.Title>
-						<Card.Subtitle>Welcome to home route</Card.Subtitle>
-					</Card.Primary>
-					<Card.SupportingText>
+					<div class={style.cardHeader}>
+						<h2 class=" mdc-typography--title">Home card</h2>
+				            	<div class=" mdc-typography--caption">Welcome to home route</div>
+					</div>
+					<div class={style.cardBody}>
 						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-					</Card.SupportingText>
+					</div>
 					<Card.Actions>
-						<Card.Action>OKAY</Card.Action>
+						<Card.ActionButton>OKAY</Card.ActionButton>
 					</Card.Actions>
 				</Card>
 			</div>
