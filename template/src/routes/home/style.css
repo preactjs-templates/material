@@ -3,3 +3,11 @@
 	min-height: 100%;
 	width: 100%;
 }
+
+.cardHeader {
+	padding: 16px;
+}
+
+.cardBody {
+	paddding: 16px
+}
