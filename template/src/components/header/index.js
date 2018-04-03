@@ -69,16 +69,14 @@ export default class Header extends Component {
 				</Toolbar>
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.TemporaryDrawerContent>
-						<List>
-							<List.LinkItem onClick={this.goHome}>
-								<List.ItemIcon>home</List.ItemIcon>
-								Home
-							</List.LinkItem>
-							<List.LinkItem onClick={this.goToMyProfile}>
-								<List.ItemIcon>account_circle</List.ItemIcon>
-								Profile
-							</List.LinkItem>
-						</List>
+						<Drawer.DrawerItem onClick={this.goHome}>
+							<List.ItemGraphic>home</List.ItemGraphic>
+							Home
+						</Drawer.DrawerItem>
+						<Drawer.DrawerItem onClick={this.goToMyProfile}>
+							<List.ItemGraphic>account_circle</List.ItemGraphic>
+							Profile
+						</Drawer.DrawerItem>
 					</Drawer.TemporaryDrawerContent>
 				</Drawer.TemporaryDrawer>
 				<Dialog ref={this.dialogRef}>
