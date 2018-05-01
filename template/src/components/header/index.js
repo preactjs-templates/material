@@ -68,7 +68,7 @@ export default class Header extends Component {
 					</Toolbar.Row>
 				</Toolbar>
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
-					<Drawer.TemporaryDrawerContent>
+					<Drawer.DrawerContent>
 						<Drawer.DrawerItem onClick={this.goHome}>
 							<List.ItemGraphic>home</List.ItemGraphic>
 							Home
@@ -77,7 +77,7 @@ export default class Header extends Component {
 							<List.ItemGraphic>account_circle</List.ItemGraphic>
 							Profile
 						</Drawer.DrawerItem>
-					</Drawer.TemporaryDrawerContent>
+					</Drawer.DrawerContent>
 				</Drawer.TemporaryDrawer>
 				<Dialog ref={this.dialogRef}>
 					<Dialog.Header>Settings</Dialog.Header>
