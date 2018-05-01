@@ -47,3 +47,7 @@ html, body {
 	background-color: #333;
 	color: #fff;
 }
+
+.mdc-theme--dark .mdc-card {
+  color: #444;
+}
