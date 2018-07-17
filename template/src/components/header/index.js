@@ -62,7 +62,7 @@ export default class Header extends Component {
 							</Toolbar.Icon>
 							<Toolbar.Title>Preact app</Toolbar.Title>
 						</Toolbar.Section>
-						<Toolbar.Section align-end onClick={this.openSettings}>
+						<Toolbar.Section align-end shrink-to-fit onClick={this.openSettings}>
 							<Toolbar.Icon>settings</Toolbar.Icon>
 						</Toolbar.Section>
 					</Toolbar.Row>
@@ -87,7 +87,7 @@ export default class Header extends Component {
 						</div>
 					</Dialog.Body>
 					<Dialog.Footer>
-						<Dialog.FooterButton accept>okay</Dialog.FooterButton>
+						<Dialog.FooterButton accept>OK</Dialog.FooterButton>
 					</Dialog.Footer>
 				</Dialog>
 			</div>
