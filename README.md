@@ -17,6 +17,25 @@ $ npm run dev
 
 Development server runs on port `8080`. If the default port is already in use on your machine it will start the development server on a random port.
 
+## Styling material components
+In order to style the material components you can give class names to the components and target them with the css selectorr in any css files.
+
+To style them globally use the index `[style.css](https://github.com/preactjs-templates/material/blob/master/template/src/style/index.css)`, so that it affects it everywhere.
+e.g.
+```
+.mdc-dialog .mdc-dialog__surface{
+  max-width: 300px;
+  min-width: 0;
+  color: tomato;
+}
+```
+
+## Theming
+In order to alter the theme of the app you can again use the index `[style.css](https://github.com/preactjs-templates/material/blob/master/template/src/style/index.css)` and alter the theme variables in it defined here: 
+https://material.io/develop/web/components/theme/#css-custom-properties
+
+But you can also give class names to the components and use these variables to just change the theme of that component.
+
 ## Commands
 
 - `npm run start`: Runs `serve` or `dev`, depending on `NODE_ENV` value. Defaults to `dev server`
