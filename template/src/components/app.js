@@ -14,13 +14,15 @@ export default class App extends Component {
 	 *	@param {string} event.url	The newly routed URL
 	 */
 	handleRoute = e => {
-		this.currentUrl = e.url;
+		this.setState({
+			currentUrl: e.url
+		});
 	};
 
 	render() {
 		return (
 			<div id="app">
-				<Header />
+				<Header selectedRoute={this.state.currentUrl}/>
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
 					<Profile path="/profile/" user="me" />

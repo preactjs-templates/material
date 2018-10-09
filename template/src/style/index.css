@@ -51,3 +51,7 @@ html, body {
 .mdc-theme--dark .mdc-card {
   color: #444;
 }
+
+#app .page {
+  padding-top: 56px;
+}
