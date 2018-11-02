@@ -55,7 +55,7 @@ export default class Header extends Component {
 		console.log(props.selectedRoute);
 		return (
 			<div>
-				<TopAppBar className="toolbar">
+				<TopAppBar className="topappbar">
 					<TopAppBar.Row>
 						<TopAppBar.Section align-start>
 							<TopAppBar.Icon menu onClick={this.openDrawer}>
