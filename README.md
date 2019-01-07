@@ -18,7 +18,7 @@ $ npm run dev
 Development server runs on port `8080`. If the default port is already in use on your machine it will start the development server on a random port.
 
 ## Styling material components
-In order to style the material components you can give class names to the components and target them with the css selectorr in any css files.
+In order to style the material components you can give class names to the components and target them with the css selector in any css files.
 
 To style them globally use the index `[style.css](https://github.com/preactjs-templates/material/blob/master/template/src/style/index.css)`, so that it affects it everywhere.
 e.g.
