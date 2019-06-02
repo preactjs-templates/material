@@ -4,10 +4,21 @@ import 'preact-material-components/Button/style.css';
 import style from './style';
 
 export default class Profile extends Component {
-	state = {
-		time: Date.now(),
-		count: 10
-	};
+	constructor(props, context) {
+		super(props, context);
+		this.props = props;
+		this.state = props.store.state;
+		this.state.time = Date.now();
+	}
+
+	componentWillMount() {
+		// start with store's initial state
+		this.setState(this.props.store.state);
+		// subscribe to state changes
+		this.props.store.onChange(state => {
+			this.setState(state, () => {});
+		});
+	}
 
 	// gets called when this route is navigated to
 	componentDidMount() {
@@ -26,7 +37,8 @@ export default class Profile extends Component {
 	};
 
 	increment = () => {
-		this.setState({ count: this.state.count+1 });
+		// this.setState({ count: this.state.count + 1 });
+		this.props.store.command('increment');
 	};
 
 	// Note: `user` comes from the URL, courtesy of our router
@@ -34,13 +46,14 @@ export default class Profile extends Component {
 		return (
 			<div class={`${style.profile} page`}>
 				<h1>Profile: {user}</h1>
-				<p>This is the user profile for a user named { user }.</p>
+				<p>This is the user profile for a user named {user}.</p>
 
 				<div>Current time: {new Date(time).toLocaleString()}</div>
 
 				<p>
-					<Button raised ripple onClick={this.increment}>Click Me</Button>
-					{' '}
+					<Button raised ripple onClick={this.increment}>
+						Click Me
+					</Button>{' '}
 					Clicked {count} times.
 				</p>
 			</div>

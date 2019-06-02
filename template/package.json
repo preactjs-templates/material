@@ -6,9 +6,10 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
-    "serve": "preact build && preact serve",
+    "serve": "preact build && http-server build",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "styles:eject": "rsync -arvvm --include='*/' --include='*css' --exclude='*' node_modules/preact-material-components/ ./src/styles/"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor",
@@ -19,18 +20,25 @@
       "react/prefer-stateless-function": "off"
     }
   },
-  "eslintIgnore": ["build/*"],
+  "eslintIgnore": [
+    "build/*"
+  ],
   "devDependencies": {
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
+    "http-server": "^0.11.1",
     "if-env": "^1.0.0",
-    "preact-cli": "^2.0.0"
+    "node-sass": "^4.12.0",
+    "preact-cli": "^3.0.0-rc.1",
+    "sass-loader": "^7.1.0"
   },
   "dependencies": {
+    "@material/base": "^1.0.0",
+    "@material/tab-scroller": "^2.3.0",
+    "dexie": "^2.0.4",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
-    "preact-render-to-string": "^4.1.0",
-    "preact-router": "^2.5.5",
-    "preact-material-components": "^1.4.3"
+    "preact-material-components": "^1.4.3",
+    "preact-router": "^2.5.5"
   }
 }

@@ -1,6 +1,8 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
+import store from '../stores/MyStore';
+
 import Header from './header';
 import Home from '../routes/home';
 import Profile from '../routes/profile';
@@ -14,9 +16,11 @@ export default class App extends Component {
 	 *	@param {string} event.url	The newly routed URL
 	 */
 	handleRoute = e => {
-		this.setState({
-			currentUrl: e.url
-		});
+		setTimeout(() => {
+			this.setState({
+				currentUrl: e.url
+			});
+		}, 0);
 	};
 
 	render() {
@@ -24,10 +28,10 @@ export default class App extends Component {
 			<div id="app">
 				<Header selectedRoute={this.state.currentUrl} />
 				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-					<NotFound default />
+					<Home path="/" store={store} />
+					<Profile path="/profile/" user="me" store={store} />
+					<Profile path="/profile/:user" store={store} />
+					<NotFound default store={store} />
 				</Router>
 			</div>
 		);
