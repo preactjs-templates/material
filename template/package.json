@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
-    "serve": "preact build && preact serve",
+    "serve": "preact serve",
     "dev": "preact watch",
     "lint": "eslint src"
   },
@@ -23,7 +22,6 @@
   "devDependencies": {
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
-    "if-env": "^1.0.0",
     "preact-cli": "^2.0.0"
   },
   "dependencies": {
