@@ -7,7 +7,8 @@
     "build": "preact build",
     "serve": "preact serve",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "postinstall": "echo 'ALERT! This package has been deprecated. Please use default/typescript/netlify/simple.'"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor",
