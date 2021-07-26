@@ -1,3 +1,5 @@
+# THIS TEMPLATE IS DEPRECATED
+
 # preact-material-boilerplate
 
 ## Documentation
