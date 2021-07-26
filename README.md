@@ -1,3 +1,7 @@
+# This template has been deprecated. Please use default/typescript/netlify/simple.
+
+***
+
 # preact-material-boilerplate
 
 ## Documentation
